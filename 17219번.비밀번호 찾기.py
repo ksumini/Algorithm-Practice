@@ -12,7 +12,7 @@ for i in range(N):
 address = [sys.stdin.readline().strip() for _ in range(M)]
 for i in address:
     idx = id_list.index(i)
-    print(pw_list[idx]
+    print(pw_list[idx])
  
  
 # 2차 코딩 - 정답(11068ms)
