@@ -10,7 +10,5 @@ for i in range(N):
     elif status == 'leave':
         del employee[name]
 
-sorted(employee.keys(), reverse=True)
-
 for j in sorted(employee.keys(), reverse=True):
     print(j)
