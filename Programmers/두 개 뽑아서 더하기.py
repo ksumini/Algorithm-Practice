@@ -8,3 +8,11 @@ def solution(numbers):
         ans.add(sum(number))
     ans = sorted(list(ans)) # 리스트 타입으로 변환후 오름차순 정렬
     return ans
+
+# 이중 for문을 사용한 풀이
+def solution(numbers):
+    ans = []
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+            ans.append(numbers[i] + numbers[j])
+    return sorted(set(ans))
