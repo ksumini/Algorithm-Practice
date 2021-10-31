@@ -1,3 +1,5 @@
+# 구현, 자료 구조, 스택
+# 104ms
 import sys
 input = sys.stdin.readline
 K = int(input())
