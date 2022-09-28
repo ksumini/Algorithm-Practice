@@ -8,8 +8,24 @@
 백준 문제: https://www.acmicpc.net/problem/10816
 """
 
+# binary search
+def binary_search(a, target, left, right):
+    while left <= right:
+        mid = (left+right)//2
+        # 찾은 경우 중간점 인덱스 반환
+        if a[mid] == target:
+            return mid
+        # 중간점의 값보다 찾고자 하는 값이 작은 경우 왼쪽 확인
+        elif a[mid] > target:
+            right = mid-1
+        # 중간점의 값보다 찾고자 하는 값이 큰 경우 오른쪽 확인
+        else:
+            left = mid+1
+   return None
+
+
 # lower bound
-def lower_bound(a, left, right, target):
+def lower_bound(a, target, left, right):
     while left <= right:
         mid = (left+right)//2
         if a[mid] == target:
@@ -20,8 +36,9 @@ def lower_bound(a, left, right, target):
         else:
             left = mid+1
 
+            
 # upper bound
-def upper_bound(a, left, right, target):
+def upper_bound(a, target, left, right):
     while left <= right:
         mid = (left+right)//2
         if a[mid] == target:
