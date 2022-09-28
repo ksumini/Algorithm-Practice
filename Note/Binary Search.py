@@ -1,12 +1,14 @@
 """
-어떤 수열 A가 있을 때, K의 상한과 하한
+어떤 수열 A가 있을 때, target의 상한과 하한
 - 상한: 크거나 같은 수 (큰 수 중 첫 번째 수)
 - 하한: 작거나 같은 수 (크거나 같은 수 중 첫 번째 수)
-- K의 개수: 상한의 위치 - 하한의 위치
--> K가 수열에 없으면 상한 == 하한
+- target의 개수: 상한의 위치 - 하한의 위치
+-> target이 수열에 없으면 상한 == 하한
 
 백준 문제: https://www.acmicpc.net/problem/10816
 """
+from bisect import bisect_left, bisect_right
+
 
 # binary search
 def binary_search(a, target, left, right):
@@ -24,33 +26,23 @@ def binary_search(a, target, left, right):
    return None
 
 
-# lower bound
-def lower_bound(a, target):
-    left = 0; right = len(a)-1
-    ans = -1
-    while left <= right:
+# lower bound <- bisect_left(a, target)
+def lower_bound(a, target, left, right): # left = 0, right = len(a)
+    while left < right:
         mid = (left+right)//2
-        if a[mid] == target:
-            ans = mid
-            right = mid-1
-        elif a[mid] > target:
-            right = mid-1
+        if a[mid] >= target:
+            right = mid
         else:
             left = mid+1
-   return ans
+    return left
 
             
-# upper bound
-def upper_bound(a, target):
-    left = 0, right = len(a)-1
-    ans = -1
-    while left <= right:
+# upper bound <- bisect_right(a, target)
+def upper_bound(a, target, left, right): # left = 0, right = len(a)
+    while left < right:
         mid = (left+right)//2
-        if a[mid] == target:
-            ans = mid+1
-            left = mid+1
-        elif a[mid] > target:
-            right = mid-1
+        if a[mid] > target:
+            right = mid
         else:
             left = mid+1
-    return ans
+    return left
