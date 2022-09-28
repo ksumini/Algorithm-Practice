@@ -25,7 +25,9 @@ def binary_search(a, target, left, right):
 
 
 # lower bound
-def lower_bound(a, target, left, right):
+def lower_bound(a, target):
+    left = 0; right = len(a)-1
+    ans = -1
     while left <= right:
         mid = (left+right)//2
         if a[mid] == target:
@@ -35,10 +37,13 @@ def lower_bound(a, target, left, right):
             right = mid-1
         else:
             left = mid+1
+   return ans
 
             
 # upper bound
-def upper_bound(a, target, left, right):
+def upper_bound(a, target):
+    left = 0, right = len(a)-1
+    ans = -1
     while left <= right:
         mid = (left+right)//2
         if a[mid] == target:
@@ -48,3 +53,4 @@ def upper_bound(a, target, left, right):
             right = mid-1
         else:
             left = mid+1
+    return ans
