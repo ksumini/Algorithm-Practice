@@ -9,21 +9,25 @@
 - 전체 순열을 모두 구하는 시간복잡도: O(N! * N) <-크기가 N인 수열의 서로 다른 순열은 총 N!개
 """
 
-def next_permutation(a):
-    i = len(a)-1
-    while i > 0 and a[i-1] >= a[i]:
+def next_permutation(a): # 순열 a를 계속 변경
+    i = len(a)-1 # 뒤에서부터
+    # 1. a[i-1] < a[i]를 만족하는 가장 큰 i를 찾는다
+    while i > 0 and a[i-1] >= a[i]: # 마지막 수열
         i -= 1
-    if i <= 0: # 마지막 순열
-        return False
+    if i <= 0: # 0번째 index까지 확인한 경우(내림차순)
+        return False # 다음 순열이 없음(마지막 순열)
     j = len(a)-1
+    # 2. j >= i이면서 a[j] > [i-1]를 만족하는 가장 큰 j를 찾는다
     while a[j] <= a[i-1]:
         j -= 1
+    # 3. a[i-1]과 a[j]를 swap
     a[i-1], a[j] = a[j], a[i-1]
 
     j = len(a)-1
+    # 4. a[i]부터 순열을 뒤집는다.
     while i < j:
-        a[i], a[j] = a[j], a[i]
+        a[i],a[j] = a[j],a[i]
         i += 1
         j -= 1
 
-    return True
+    return True # 다음 순열이 있음
