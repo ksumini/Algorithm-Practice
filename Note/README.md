@@ -8,6 +8,7 @@
     - 상한, 하한 개념      
     
   ## 3. 브루트 포스    
+    - 재귀(Recursion)
     - 다음 순열(Next Permutation.py)   
 
   ## 4. 다이나믹 프로그래밍   
