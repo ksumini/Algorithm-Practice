@@ -7,7 +7,7 @@
   1. **선형(Linear)**
       - 배열(Array)
         - [스택(Stack), 큐(Queue), 덱(Deque)](https://github.com/ksumini/Algorithm-Practice/blob/main/Note/Data%20Structure/Stack%20%26%20Queue%20%26%20Deque.ipynb)
-      - [연결리스트(Linked List, Doubly Linked List)](https://github.com/ksumini/Algorithm-Practice/tree/main/Note/Data%20Structure/Linked%20List)
+      - [연결리스트(Singly Linked List, Doubly Linked List)](https://github.com/ksumini/Algorithm-Practice/tree/main/Note/Data%20Structure/Linked%20List)
         
   2. **비선형(NonLiear)**
       - [그래프(Graph)](https://github.com/ksumini/Algorithm-Practice/tree/main/Note/Data%20Structure/Graph)
